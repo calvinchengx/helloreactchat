@@ -38,6 +38,30 @@ var NoteActions = {
   }
 };
 
+// Note Store
+var EventEmitter = require('events').EventEmitter;
+var CHANGE_EVENT = 'change';
+
+var NoteStore = assign({}, EventEmitter.prototype, {
+  emitchange: function() {
+    this.emit(CHANGE_EVENT);
+  },
+  addChangeListener: function(callback) {
+    this.on(CHANGE_EVENT, callback);
+  },
+  removeChangeListener: function(callback) {
+    this.removeListener(CHANGE_EVENT, callback);
+  }
+  // Add in note functionality here
+  // for instance,
+  // get a note
+  // get a list of notes
+
+  // Then dispatchIndex::AppDispatcher.register will handle the cases 
+  // and return true (promises)
+
+});
+
 // React Component
 var React = require('react');
 var Note = React.createClass({
