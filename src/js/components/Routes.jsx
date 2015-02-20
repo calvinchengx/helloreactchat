@@ -12,12 +12,14 @@ var Routes = Router.Routes;
 
 var App = require('./App');
 var Home = require('./Home');
+var Note = require('./Note');
 var About = require('./About');
 var Chat = require('./Chat');
 
 var routes = (
     <Route path="/" name="app" handler={App}>       
       <DefaultRoute name="home" handler={Home}/>    
+      <Route name="note" handler={Note}/>         
       <Route name="about" handler={About}/>         
       <Route name="chat" handler={Chat}/>
     </Route>                                        
