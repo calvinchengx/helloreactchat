@@ -21,7 +21,7 @@ var Home = React.createClass({
       <div>
         Home
         <JustForFun/>
-        <HelloWorld/>
+        <HelloWorld name="Calvin"/>
       </div>
     );
   }
