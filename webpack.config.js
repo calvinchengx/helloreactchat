@@ -27,7 +27,7 @@ var config = {
   resolve: {
     alias: {},
     extensions: ['', '.jsx', '.js', 'min.js'],
-    moduleDirectories: ['node_modules', 'web_modules']
+    moduleDirectories: ['node_modules', 'bower_components', 'web_modules']
   },
   output: {
     path: __dirname + '/dist/js',
@@ -40,7 +40,8 @@ var config = {
       { test: /\.jsx$/, loader:  'jsx-loader?insertPragma=React.DOM&harmony' },
       { test: /\.css$/, loader: 'style!css' },
       { test: /\.scss$/, loader: 'style!css!sass' },
-      { test: /\.jpeg$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$/, loader: 'file' },
+      { test: /\.jpeg$|\.gif$|\.png$/, loader: 'file' },
+      { test: /\.(otf|eot|svg|woff|ttf)$/, loader: 'url-loader?limit=8192'},
       { test: /\.html$/, loader: 'file'}
     ]
   },
